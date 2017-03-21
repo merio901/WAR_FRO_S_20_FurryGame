@@ -332,3 +332,4 @@ Kolejnym i ostatnim już krokiem jest podział naszej gry na moduły. Stwórz w 
 Podziel odpowiednio Twoją aplikację umieszczając w każdym z modułów odpowiedni konstruktor. Jak się domyślasz do modułu `coin.js` musisz przenieść konstruktor `Coin()`. Analogicznie zrób z innymi modułami. Pamiętaj, aby moduły były eksportowane i importowane do innych.
 
 Pamiętasz funkcję `require()` oraz jak eksportujemy moduły?
+**Repozytorium z ćwiczeniami zostanie usunięte 2 tygodnie po zakończeniu kursu. Spowoduje to też usunięcie wszystkich forków, które są zrobione z tego repozytorium.**
