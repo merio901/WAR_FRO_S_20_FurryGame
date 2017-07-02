@@ -26,6 +26,7 @@ var Game = function() {
   };
   this.startGame = function(x) {
     var self = this;
+    /* Generating new level */
     document.querySelector("#board").classList.remove('invisible');
     document.querySelector("#over").classList.add('invisible');
     var container = document.querySelector('.center-levels');
@@ -158,9 +159,9 @@ var launchFurrious = document.querySelector('#furrious-game');
 
 //Jak rozwiązać możliwość kliknięcia kilku gier w jednej sesji
 //Ogólnie jak tworzyć kilka gier po kolei? (jakis reset button?) (DONE)
+//Czemu buttony na GameOver screenie odpalają jakąs lipna gre (DONE)
 //Tablice wyników
-//Czemu buttony na GameOver screenie odpalają jakąs lipna gre
-
+//Sound effects
 //Jak zaimplementować zwiększanie się setIntervala co 10 pktów
 
 
