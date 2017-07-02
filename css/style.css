@@ -9,6 +9,7 @@ body {
 
 section#score {
   width: 100%;
+  text-align: center;
 }
 
 #board {
@@ -23,20 +24,44 @@ section#score {
   width: 64px;
   height: 64px;
 }
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
+.center-levels {
+  width: 700px;
+  margin: auto;
+}
 
-section#score div {
+.center-levels div {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.center-levels div:active {
+  box-shadow: 2px 2px 20px 1px gray;
+}
+.center-levels div, #score-div {
+  display: inline-block;
   width: 10em;
   height: 3em;
   text-align: center;
   padding: 0.5em;
   background-color: rgba(211,211,211, 0.75);
   border: 1px solid lightgray;
-  border-radius: 1px;
+  border-radius: 10px;
   box-shadow: 1px 1px 5px 1px lightgray;
-  margin: 1em auto;
+  z-index: 1;
 }
 
+
+section#score #score-div {
+  display: block;
+  margin: 10px auto;
+}
 
 
 
@@ -57,16 +82,22 @@ section#over {
   height: 100%;
   left: 0;
   top: 0;
-  z-index: 1;
+
   padding: 10px;
-  background-color: rgba(255, 255, 0, 0.75);
+  background-color: rgba(255, 255, 0, 0.2);
 }
 
 section#over pre {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 400px;
+  bottom: 0;
   display: inline-block;
   width: 100%;
+  margin: auto;
   text-align: center;
-  font-size: 10px;
+  font-size: 70px;
   font-weight: bolder;
   color: brown;
 }
