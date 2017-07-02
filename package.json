@@ -1,0 +1,26 @@
+{
+  "name": "furry_game",
+  "version": "1.0.0",
+  "description": "furry game",
+  "main": "js/out.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/merio901/WAR_FRO_S_20_FurryGame.git"
+  },
+  "keywords": [
+    "furry",
+    "game"
+  ],
+  "author": "Michal Sobczak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/merio901/WAR_FRO_S_20_FurryGame/issues"
+  },
+  "homepage": "https://github.com/merio901/WAR_FRO_S_20_FurryGame#readme",
+  "devDependencies": {
+    "webpack": "^3.0.0"
+  }
+}
