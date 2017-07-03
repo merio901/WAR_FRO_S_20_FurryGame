@@ -14,6 +14,7 @@ var Game = function() {
   this.coin = new Coin();
   this.board = document.querySelectorAll('#board div');
   this.score = 0;
+  this.isActive = false;
   this.index = function(x, y) {
     return x + (y * 10);
   };
@@ -25,6 +26,7 @@ var Game = function() {
     this.board[this.index(this.coin.axisX, this.coin.axisY)].classList.add('coin');
   };
   this.startGame = function(x) {
+    this.isActive = true;
     var self = this;
     /* Generating new level */
     document.querySelector("#board").classList.remove('invisible');
@@ -109,6 +111,7 @@ var Game = function() {
   }
   this.gameOver = function () {
     if(this.furry.axisX < 0 || this.furry.axisX > 9 || this.furry.axisY < 0 || this.furry.axisY > 9){
+      this.isActive = false;
       clearInterval(this.idSetInterval);
       document.querySelector("#board").classList.add('invisible');
       document.querySelector("#score-div").style.cssText = 'background-color: red; box-shadow: 5px 5px 10px springgreen';
@@ -120,7 +123,7 @@ var Game = function() {
       document.querySelector("#over").appendChild(score);
     }
   }
-  /*
+/*
   this.levelUp = function() {
     var level = 50;
     switch (this.score) {
@@ -157,28 +160,66 @@ var launchMedium = document.querySelector('#medium-game');
 var launchHard = document.querySelector('#hard-game');
 var launchFurrious = document.querySelector('#furrious-game');
 
-//Jak rozwiązać możliwość kliknięcia kilku gier w jednej sesji
+//Jak rozwiązać możliwość kliknięcia kilku gier w jednej sesji (DONE)
 //Ogólnie jak tworzyć kilka gier po kolei? (jakis reset button?) (DONE)
 //Czemu buttony na GameOver screenie odpalają jakąs lipna gre (DONE)
-//Tablice wyników
+//Tablice wyników - jednorazowe lub zapisywanie w pliku?
 //Sound effects
 //Jak zaimplementować zwiększanie się setIntervala co 10 pktów
 
+  launchEasy.addEventListener('click', function() {
+    if(!newGame.isActive) {
+      var counter = 3;
+      var counterToStart = setInterval(function() {
+        console.log(counter);
+        counter--;
+      }, 1000);
+      var timeToStart = setTimeout(function () {
+        clearInterval(counterToStart);
+        newGame.startGame(300);
+      }, 3000);
+    }
+  })
+  launchMedium.addEventListener('click', function() {
+    if(!newGame.isActive) {
+      var counter = 3;
+      var counterToStart = setInterval(function() {
+        console.log(counter);
+        counter--;
+      }, 1000);
+      var timeToStart = setTimeout(function () {
+        clearInterval(counterToStart);
+        newGame.startGame(200);
+      }, 3000);
+    }
+  })
+  launchHard.addEventListener('click', function() {
+    if(!newGame.isActive) {
+      var counter = 3;
+      var counterToStart = setInterval(function() {
+        console.log(counter);
+        counter--;
+      }, 1000);
+      var timeToStart = setTimeout(function () {
+        clearInterval(counterToStart);
+        newGame.startGame(100);
+      }, 3000);
+    }
+  })
+  launchFurrious.addEventListener('click', function() {
+    if(!newGame.isActive) {
+      var counter = 3;
+      var counterToStart = setInterval(function() {
+        console.log(counter);
+        counter--;
+      }, 1000);
+      var timeToStart = setTimeout(function () {
+        clearInterval(counterToStart);
+        newGame.startGame(50);
+      }, 3000);
+    }
+  })
 
-
-
-launchEasy.addEventListener('click', function() {
-  newGame.startGame(400);
-})
-launchMedium.addEventListener('click', function() {
-  newGame.startGame(250);
-})
-launchHard.addEventListener('click', function() {
-  newGame.startGame(100);
-})
-launchFurrious.addEventListener('click', function() {
-  newGame.startGame(50);
-})
 document.addEventListener('keydown', function(event) {
   newGame.turnFurry(event);
 })
